@@ -20,7 +20,7 @@ function NameList() {
             skill: 'coding'
         },
         {
-            id:1,
+            id:3,
             name: 'Niharika',
             age: 22,
             skill: 'Talking'
