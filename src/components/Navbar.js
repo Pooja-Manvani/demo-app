@@ -13,6 +13,11 @@ export const Navbar = () => {
             <NavLink to='methodAsProps' style={{padding:10}}>MethodAsProps</NavLink>
             <NavLink to='userGreet' style={{padding:10}}>UserGreeting</NavLink>
             <NavLink to='nameList' style={{padding:10}}>ListRendering</NavLink>
+            <NavLink to='lifeCycle' style={{padding:10}}>LifeCycleComponent</NavLink>
+            <NavLink to='fragment' style={{padding:10}}>Fragment demo</NavLink>
+            <NavLink to='pureComp' style={{padding:10}}>Pure/Memo demo</NavLink>
+            <NavLink to='ref' style={{padding:10}}>Ref demo</NavLink>
+            <NavLink to='portal' style={{padding:10}}>Portal demo</NavLink>
         </nav>
     )
 }

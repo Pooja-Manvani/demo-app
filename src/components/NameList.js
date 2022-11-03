@@ -22,8 +22,8 @@ function NameList() {
         {
             id:3,
             name: 'Niharika',
-            age: 22,
-            skill: 'Talking'
+            age: 23,
+            skill: 'cricket'
         },
     ]
 

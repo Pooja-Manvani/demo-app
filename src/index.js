@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// const PortalDemo = ReactDOM.createRoot(document.getElementById('portal-demo'));
 root.render(
  
    <BrowserRouter>
@@ -13,6 +14,13 @@ root.render(
    </BrowserRouter>
   
 );
+// PortalDemo.render(
+ 
+//    <BrowserRouter>
+//     <App />
+//    </BrowserRouter>
+  
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

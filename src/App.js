@@ -10,6 +10,11 @@ import EventBind from './components/EventBind';
 import ParentComponent from './components/MethodAsProps/ParentComponent';
 import UserGreeting from './components/UserGreeting';
 import NameList from './components/NameList';
+import LifeCycleA from './components/LifeCycleA';
+import  Fragment  from './components/Fragment';
+import ParentComp from './components/ParentComp';
+import FocusInput from './components/FocusInput';
+import PortalDemo from './components/PortalDemo';
 
 
 function App() {
@@ -32,6 +37,11 @@ function App() {
         <Route path='methodAsProps' element={<ParentComponent/>}> </Route>
         <Route path='userGreet' element={<UserGreeting/>}> </Route>
         <Route path='nameList' element={<NameList/>}> </Route>
+        <Route path='lifeCycle' element={<LifeCycleA/>}> </Route>
+        <Route path='fragment' element={<Fragment/>}> </Route>
+        <Route path='pureComp' element={<ParentComp/>}> </Route>
+        <Route path='ref' element={<FocusInput/>}> </Route>
+        <Route path='portal' element={<PortalDemo/>}> </Route>
     </Routes>
     </div>
     </div>
