@@ -1,6 +1,11 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
+/**
+ * @name ChildComponent
+ * @param props
+ * @return eventhandler to child
+ */
 function ChildComponent(props) {
   return (
     <div>

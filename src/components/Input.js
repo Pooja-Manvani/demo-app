@@ -42,7 +42,7 @@ import React from 'react'
 //   )
 // }
 
-const Input = React.forwardRef((props, ref)=>{
+const Input = React.forwardRef((ref)=>{
   return (
     <div>
       <input type='text' ref={ref} />

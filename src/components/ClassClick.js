@@ -3,6 +3,10 @@
   
   class  ClassClick extends Component {
 
+    /**
+     * @name clickHandler
+     * @return
+     */
     clickHandler (){
         console.log('Button Clicked');
     }

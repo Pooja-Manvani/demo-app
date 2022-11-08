@@ -3,25 +3,42 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { deleteContact, getContactsList } from "../api/axios";
 
-
+/**
+ * @name ContactsList
+ * @returns contact list
+ */
 const ContactsList = () => {
 
+  /**
+   * @name useState
+   */
   const [contactsList, setContactsList] = useState([]);
+  /**
+   * @name useEffect
+   */
   useEffect(() => {
     getContacts();
   }, []);
 
   const navigate = useNavigate();
 
+  /**
+   * @name getContacts
+   * @description service call of get for get response as list data.
+   */
   const getContacts = async () => {
     const response = await getContactsList();
     console.log(response.data);
     setContactsList(response.data);
   };
 
+  /**
+   * @name deleteData
+   * @param {*} id 
+   * @description Delete contact as per id.
+   */
   const deleteData = async (id) => {
     await deleteContact(id);
-    
     getContacts();
 }
 

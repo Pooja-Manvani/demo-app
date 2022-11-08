@@ -11,6 +11,10 @@ constructor(props) {
   }
 }
 
+/**
+ * @name increment
+ * @description increment on clicking of button using useState.
+ */
 increment() {
     // this.state.count = this.state.count + 1
     // to reflect the count use setState

@@ -13,29 +13,54 @@ class LifeCycleA extends Component {
       console.log('LifeCycleA Constructor');
     }
 
+    /**
+     * 
+     * @param {*} props 
+     * @param {*} state 
+     * @returns null
+     */
     static getDerivedStateFromProps(props, state) {
         console.log('LifeCycleA getDerivedStateFromProps')
         return null
     }
 
+    /**
+     * @name componentDidMount
+     */
     componentDidMount() {
         console.log('LifeCycleA componentDidMount');
     }
 
+    /**
+     * @name shouldComponentUpdate
+     * @returns true
+     */
     shouldComponentUpdate() {
         console.log('LifeCycleA shouldComponentUpdate');
         return true 
     }
 
+    /**
+     * @name getSnapshotBeforeUpdate
+     * @param {*} prevProps 
+     * @param {*} prevState 
+     */
     getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('LifeCycleA getSnapshotBeforeUpdate')
     }
 
+    /**
+     * @name componentDidUpdate
+     * @returns null
+     */
     componentDidUpdate(){
         console.log('LifeCycleA componentDidUpdate')
         return null
     }
 
+    /**
+     * @description change state
+     */
     changeState = () => {
         this.setState({
             name: 'Hello There!'

@@ -5,7 +5,9 @@ class ParentComponent extends Component {
 
     constructor(props) {
       super(props)
-    
+    /**
+     * @state parentName
+     */
       this.state = {
          parentName: 'parent'
       }
@@ -13,6 +15,10 @@ class ParentComponent extends Component {
       this.greetParent = this.greetParent.bind(this)
     }
 
+    /**
+     * @name greetParent
+     * @param {*} childName 
+     */
     greetParent(childName) {
         alert(`Hello ${this.state.parentName}  from ${childName}` )
     }

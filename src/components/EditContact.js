@@ -8,6 +8,10 @@ const initialValue = {
   email: "",
 };
 
+/**
+ * @name EditContact
+ * @returns Edit data
+ */
 const EditContact = () => {
   const [user, setUser] = useState(initialValue);
 
@@ -19,6 +23,10 @@ const EditContact = () => {
     loadContactData();
   },[]);
 
+  /**
+   * @name loadContactData
+   * @description it's load the contact of user.
+   */
   const loadContactData = async () => {
     await getContactsList(id).then((res) => {
       if (res) {
@@ -32,10 +40,18 @@ const EditContact = () => {
 
   const navigate = useNavigate();
 
+  /**
+   * @name onValueChange
+   * @param {*} e 
+   */
   const onValueChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  /**
+   * @name editContactDetails
+   * @description update contacts list with edited data.
+   */
   const editContactDetails = async () => {
     await editContact(id, user).then((res) => {
       if (res) {

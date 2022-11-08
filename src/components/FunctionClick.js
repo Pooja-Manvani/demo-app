@@ -4,7 +4,9 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 
 function FunctionClick(props) {
-
+  /**
+   * @name clickHandler
+   */
     function clickHandler() {
         console.log('Button clicked');
     }

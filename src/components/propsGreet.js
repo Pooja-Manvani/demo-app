@@ -1,9 +1,9 @@
 import React from 'react';
 
-function PropsGreet({name,heroname}) {
+function PropsGreet({name}) {
     return (
-        <div>
-            <h1>Hello {name} a.K.a {heroname}</h1>
+        <div style={{color:'blue'}}>
+            <h1>Hello {name} </h1>
         </div>
     );
 }

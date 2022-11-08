@@ -14,7 +14,7 @@ constructor(props) {
   render() {
 
     // shortcircuit operator
-    return this.state.isLoggedIn && <div>Welcome Siroan</div>
+    return this.state.isLoggedIn && <div style={{fontWeight:'bold'}}>Welcome Siroan</div>
 
     // ternary operator
     // return (
