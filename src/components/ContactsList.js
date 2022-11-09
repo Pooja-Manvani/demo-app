@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { deleteContact, getContactsList } from "../api/axios";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 /**
  * @name ContactsList
  * @returns contact list
  */
-const ContactsList = () => {
+const ContactsList = (props) => {
 
   /**
    * @name useState
@@ -43,6 +44,7 @@ const ContactsList = () => {
 }
 
   return (
+    <div style={{width:'100%',overflow:'auto',height:'52%',padding:5,paddingTop:10}} >  
     <table style={{width:'100%', padding:5}}>
       <thead style={{padding:5}}>
         <tr >
@@ -53,7 +55,29 @@ const ContactsList = () => {
         </tr>
       </thead>
       <tbody>
-        {contactsList?.map((data) => (
+        {!props.filteredData && contactsList?.map((data) => (
+          <tr key={data.id}>
+            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.id}</td>
+            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.name}</td>
+            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.email}</td>
+            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>
+              
+              <Button
+                onClick={() => navigate(`/editContact/${data.id}`)}
+              >
+                Edit
+              </Button>
+              <Button
+                onClick={() => deleteData(data.id)}
+                style={{ margin: "0px 20px" }}
+              >
+                Delete
+              </Button>
+              
+            </td>
+          </tr>
+        ))}
+         {props.filteredData && props.filteredData?.map((data) => (
           <tr key={data.id}>
             <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.id}</td>
             <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.name}</td>
@@ -77,6 +101,7 @@ const ContactsList = () => {
         ))}
       </tbody>
     </table>
+    </div>
   );
 };
 

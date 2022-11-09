@@ -27,12 +27,12 @@ function App() {
    {/* Header */}
    <Navbar></Navbar>
    {/* Wrapper Contatiner */}
-   <div style={{height:'100%',display:'flex',position:'relative'}}>
+   <div style={{height:'100%',display:'flex',position:'relative',overflow:'hidden'}}>
     {/* Sidebar */}
       <Sidebar></Sidebar>
-      <div style={{height:'100%', backgroundColor:' #f1f1f1',padding:40,flexGrow:1}}>
+      <div style={{height:'100%', backgroundColor:' #f1f1f1',padding:40,flexGrow:1,overflow:'hidden'}}>
         {/* Content Wrapper */}
-          <div style={{backgroundColor:'#ffffff', padding:30, height:'100%',textAlign:'center', borderRadius: 5}}>
+          <div style={{backgroundColor:'#ffffff', padding:30, height:'100%',textAlign:'center', borderRadius: 5,overflow:'hidden'}}>
             {/* All Concepts Routes */}
             <Routes >
                 

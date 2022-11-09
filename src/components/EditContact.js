@@ -21,7 +21,7 @@ const EditContact = () => {
 
   useEffect(() => {
     loadContactData();
-  },[]);
+  }, [] );
 
   /**
    * @name loadContactData
