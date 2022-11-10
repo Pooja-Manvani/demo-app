@@ -21,6 +21,10 @@ const ContactsList = (props) => {
     getContacts();
   }, []);
 
+  useEffect(() => {
+    console.log(props.filteredData);
+  }, [props.filteredData]);
+
   const navigate = useNavigate();
 
   /**
@@ -55,29 +59,8 @@ const ContactsList = (props) => {
         </tr>
       </thead>
       <tbody>
-        {!props.filteredData && contactsList?.map((data) => (
-          <tr key={data.id}>
-            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.id}</td>
-            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.name}</td>
-            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.email}</td>
-            <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>
-              
-              <Button
-                onClick={() => navigate(`/editContact/${data.id}`)}
-              >
-                Edit
-              </Button>
-              <Button
-                onClick={() => deleteData(data.id)}
-                style={{ margin: "0px 20px" }}
-              >
-                Delete
-              </Button>
-              
-            </td>
-          </tr>
-        ))}
-         {props.filteredData && props.filteredData?.map((data) => (
+        
+         {contactsList?.map((data) => (
           <tr key={data.id}>
             <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.id}</td>
             <td style={{padding:5,textAlign:'center',border:'1px solid lightgrey'}}>{data.name}</td>

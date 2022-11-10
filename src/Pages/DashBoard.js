@@ -2,36 +2,39 @@ import React, { useEffect, useState } from "react";
 import { getContactsList } from "../api/axios";
 import Card from "../components/ComponentComposition/Card";
 import ContactsList from "../components/ContactsList";
-import Counter from "../components/Counter";
+// import AnalyticsCard from "../components/ComponentComposition/AnalyticsCard";
 import PropsGreet from "../components/propsGreet";
 
 export default function DashBoard() {
+  const [contactsList, setContactsList] = useState([]);
+  const [filteredData, setFilteredData] = useState(contactsList);
+  const [status,setStatus] = useState(Boolean);
+  
+  
+  const getContacts =  () => {
+
+     getContactsList().then((res)=> setContactsList(res.data));
+    
+    // setContactsList(response.data);
+  };
+
   useEffect(() => {
     getContacts();
   }, []);
-  const [contactsList, setContactsList] = useState([]);
-  const [filteredData, setFilteredData] = useState(contactsList);
-
-
-  const getContacts = async () => {
-    console.log('sass');
-    const response = await getContactsList();
-    console.log(response.data);
-    setContactsList(response.data);
-  };
 
   const handleSearch = (event) => {
+    console.log(event.target.value);
     let value = event.target.value.toLowerCase();
     let result = [];
-    console.log(value);
-    result = contactsList.filter((data) => {
-      // console.log(...data.name.includes(value));
+    console.log(contactsList);
+    result = contactsList?.filter((data) => {
+      console.log(data);
       if (data.name.toLowerCase().includes(value)) {
+        console.log(data);
         return data;
       }
     });
     setFilteredData(result);
-    // console.log(filteredData);
   };
 
   return (
@@ -53,20 +56,24 @@ export default function DashBoard() {
           ></input>
         </div>
       </div>
-      <div style={{ display: "flex", padding: 10 }}>
-        {/* Analytics Card */}
-        <Card title={"Analytics Data"}>
-          <Counter />
-        </Card>
+      <div style={{ display: "flex", padding: 10, }}>
+       {/* Analytics Card */}
+        <div style={{width:'50%'}}>
+          <Card title={"Analytics Data"} status={true}>
+                {/* <AnalyticsCard /> */}
+          </Card>
+        </div>
         {/* User Deatail Card */}
-        <Card title={"User Details"}>
-          <PropsGreet name={"Foo Rose"} />
-        </Card>
+        <div style={{width:'50%'}}>
+          <Card title={"User Details"} status={false}>
+            <PropsGreet name={"Siroan"} email={'siroan.@gmail.com'} />
+          </Card>
+        </div>
       </div>
       <div style={{ padding: 10, overflow: "hidden", height: "100%" }}>
         {/* Other Data card */}
-        <Card title={" Contacts List"} methodAsProps={()=>getContacts()}>
-          <ContactsList filteredData={filteredData}  />
+        <Card title={" Contacts List"} status={false}>
+          <ContactsList filteredData={filteredData} />
         </Card>
       </div>
     </div>
