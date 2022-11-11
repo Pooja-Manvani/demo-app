@@ -2,6 +2,7 @@ import axios from "axios";
 
 // Base URL 
 const url = 'http://localhost:3000/Contacts';
+const http = 'http://localhost:3000/data';
 
 /**
  * 
@@ -13,6 +14,12 @@ export const getContactsList = async (id) => {
     id = id || '';
     console.log(url);
     return await axios.get(`${url}/${id}`);
+}
+
+export const getdataList = async (id) => {
+    id = id || '';
+    console.log(http);
+    return await axios.get(`${http}/${id}`);
 }
 
 

@@ -60,5 +60,38 @@
       "email": "ghjguk",
       "id": 15
     }
+  ],
+  "data" : [
+    {
+      "id": 1,
+      "name": "pooja",
+      "prodData": 20,
+      "year": 2022
+    },
+    {
+      "id": 2,
+      "name": "hiren",
+      "prodData": 50,
+      "year": 2021
+    },
+    {
+      "id": 3,
+      "name": "poo",
+      "prodData": 10,
+      "year": 2024
+    },
+    {
+      "id": 4,
+      "name": "dhanu",
+      "prodData": 60,
+      "year": 2023
+    },
+    {
+      "id": 5,
+      "name": "raju",
+      "prodData": 40,
+      "year": 1998
+    }
   ]
+ 
 }

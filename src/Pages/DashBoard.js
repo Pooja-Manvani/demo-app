@@ -2,39 +2,39 @@ import React, { useEffect, useState } from "react";
 import { getContactsList } from "../api/axios";
 import Card from "../components/ComponentComposition/Card";
 import ContactsList from "../components/ContactsList";
-// import AnalyticsCard from "../components/ComponentComposition/AnalyticsCard";
 import PropsGreet from "../components/propsGreet";
 
+import Analytics from "../components/ComponentComposition/Analytics";
 export default function DashBoard() {
   const [contactsList, setContactsList] = useState([]);
-  const [filteredData, setFilteredData] = useState(contactsList);
-  const [status,setStatus] = useState(Boolean);
-  
-  
-  const getContacts =  () => {
-
-     getContactsList().then((res)=> setContactsList(res.data));
-    
-    // setContactsList(response.data);
-  };
-
+  const [filteredData, setFilteredData] = useState([]);
   useEffect(() => {
     getContacts();
   }, []);
 
+  const getContacts = async () => {
+    await getContactsList().then((res) => {
+      setContactsList(res.data);
+      setFilteredData(res.data);
+    });
+  };
+
   const handleSearch = (event) => {
     console.log(event.target.value);
-    let value = event.target.value.toLowerCase();
+    let value = event.target.value;
     let result = [];
-    console.log(contactsList);
     result = contactsList?.filter((data) => {
-      console.log(data);
+      // console.log(data,"list");
       if (data.name.toLowerCase().includes(value)) {
-        console.log(data);
         return data;
       }
     });
     setFilteredData(result);
+  };
+  const [showTable, setShowTable] = useState(true);
+
+  const toggleView = (boolean) => {
+    setShowTable(boolean);
   };
 
   return (
@@ -56,17 +56,17 @@ export default function DashBoard() {
           ></input>
         </div>
       </div>
-      <div style={{ display: "flex", padding: 10, }}>
-       {/* Analytics Card */}
-        <div style={{width:'50%'}}>
-          <Card title={"Analytics Data"} status={true}>
-                {/* <AnalyticsCard /> */}
+      <div style={{ display: "flex", padding: 10, height: "40%" }}>
+        {/* Analytics Card */}
+        <div style={{ width: "50%", height: "100%" }}>
+          <Card title={"Analytics Data"} status={true} toggleView={toggleView}>
+            <Analytics showTable={showTable} />
           </Card>
         </div>
         {/* User Deatail Card */}
-        <div style={{width:'50%'}}>
+        <div style={{ width: "50%", height: "100%" }}>
           <Card title={"User Details"} status={false}>
-            <PropsGreet name={"Siroan"} email={'siroan.@gmail.com'} />
+            <PropsGreet name={"Siroan"} email={"siroan.@gmail.com"} />
           </Card>
         </div>
       </div>

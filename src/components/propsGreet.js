@@ -3,7 +3,7 @@ import React from 'react';
 function PropsGreet({name,email}) {
     const props = {name,email}
     return (
-        <div style={{width:'100%', overflow:'hidden',padding:50,textAlign:'center',fontWeight:'bold',fontSize:24}}>
+        <div style={{width:'100%', overflow:'hidden',padding:20,textAlign:'center',fontWeight:'bold',fontSize:24}}>
             <p style={{color:'grey', padding:10, lineHeight:'1.5px'}}>
                 Hello {props.name},
             </p>
