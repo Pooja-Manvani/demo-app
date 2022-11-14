@@ -9,7 +9,7 @@ export default function Sidebar() {
       
   return (
       <nav style={{width:'10%',backgroundColor:'lightgrey',flexDirection:'column',color:'grey'}}>
-            <NavItem style={{padding:15,justifyContent:'center',textAlign:'center',cursor:'pointer',borderBottom:'1px solid #cbc8c8'}} onClick={() => navigate("/contactsList")}>
+            <NavItem style={{padding:15,justifyContent:'center',textAlign:'center',cursor:'pointer',borderBottom:'1px solid #cbc8c8'}} onClick={() => navigate("/dashboard")}>
                 Home
             </NavItem>
             <NavItem  style={{padding:15,justifyContent:'center',textAlign:'center',cursor:'pointer',borderBottom:'1px solid #cbc8c8'}} onClick={() => navigate("/register")} >
