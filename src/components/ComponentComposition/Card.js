@@ -14,7 +14,7 @@ export default function Card(props) {
         <div style={{display:'flex',justifyContent:'space-between'}}>
           <h1>{props.title}</h1>
           <div>
-            { props.status? <Button style={{padding:3,marginTop:10}} onClick={() => { setShowTable(!showTable) ;props.toggleView(showTable)}} >toggle</Button> : null}
+            { props.status? <Button style={{padding:3,marginTop:10}} onClick={() => { setShowTable(!showTable) ; props.toggleView(showTable)}} >toggle</Button> : null}
           </div>
         </div>
         <div style={{overflow:'hidden',height:'100%'}}>{props.children}</div>
