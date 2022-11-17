@@ -8,10 +8,14 @@ import Analytics from "../components/ComponentComposition/Analytics";
 export default function DashBoard() {
   const [contactsList, setContactsList] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+
   useEffect(() => {
     getContacts();
   }, []);
-
+  /**
+   * @name getContacts
+   * @description API get call for listing data and set state.
+   */
   const getContacts = async () => {
     await getContactsList().then((res) => {
       setContactsList(res.data);
@@ -19,6 +23,11 @@ export default function DashBoard() {
     });
   };
 
+  /**
+   * @name handleSearch
+   * @param {*} event
+   * @description to handle search event from parent
+   */
   const handleSearch = (event) => {
     console.log(event.target.value);
     let value = event.target.value;
@@ -31,15 +40,22 @@ export default function DashBoard() {
     });
     setFilteredData(result);
   };
+  /**
+   * @description set table data in analytics card.
+   */
   const [showTable, setShowTable] = useState(true);
-
+  /**
+   * @name toggleView
+   * @param {*} boolean
+   * @description set boolean data in prop for child.
+   */
   const toggleView = (boolean) => {
     setShowTable(boolean);
   };
 
   return (
     <div style={{ padding: 10, height: "100%", overflow: "hidden" }}>
-      {/* Title */}
+      {/* Title style */}
       <div
         style={{
           padding: 20,
@@ -47,6 +63,7 @@ export default function DashBoard() {
           justifyContent: "space-between",
         }}
       >
+        {/* Dashboard Title */}
         <h1>DashBoard</h1>
         <div style={{ padding: 5, paddingRight: 20, display: "flex" }}>
           <input
@@ -71,7 +88,7 @@ export default function DashBoard() {
         </div>
       </div>
       <div style={{ padding: 10, overflow: "hidden", height: "100%" }}>
-        {/* Other Data card */}
+        {/* Contact list card */}
         <Card title={" Contacts List"} status={false}>
           <ContactsList filteredData={filteredData} />
         </Card>

@@ -7,7 +7,10 @@ export default function TableAnalytics() {
   useEffect(() => {
     getData();
   }, []);
-
+/**
+ * @name getData
+ * @description API call for getting table data.
+ */
   const getData = async () => {
     const res = await getdataList();
     console.log(res.data);
