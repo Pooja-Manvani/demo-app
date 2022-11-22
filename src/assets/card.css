@@ -1,0 +1,14 @@
+.wrapper-card {
+    padding: 10px;
+    background-color: white;
+    border: .75px solid pink;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 30%;
+}
+
+.card-title {
+    color: palevioletred;
+}
