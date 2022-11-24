@@ -3,7 +3,7 @@ import React from 'react'
 export default function Login() {
   
   return (
-    <form className='p-4' >
+    <form className='p-lg-4 p-2' >
  <h2 className="card-title text-center">Login Page</h2>
     <div className="mb-3">
       <label className='fw-bold align-items-start' >Email address</label>
@@ -37,7 +37,7 @@ export default function Login() {
     </div>
 
     <div className="d-grid">
-      <button type="submit" className="btn btn-custom">
+      <button type="submit" className=" btn-custom">
         Submit
       </button>
     </div>

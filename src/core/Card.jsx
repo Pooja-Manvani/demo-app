@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/card.css";
+// import "../assets/card.css";
 import Login from "../Components/Login";
 import SignUp from "../Components/SignUp";
 
@@ -17,17 +17,21 @@ export default function Card(props) {
       {/* Title of card */}
       
       {/* Form for Login */}
-   {showLogin &&  <Login />}
-   {!showLogin &&  <SignUp />}
-      <div className="d-grid px-4">
+    {showLogin &&  <Login />}
+    {showLogin &&  <Login /> ? 
+      <div className="d-grid px-2 px-lg-4 pb-1">
         <button
           type="button"
-          className="btn btn-custom"
+          className="btn-custom"
           onClick={setSignUp}
         >
           {title}
         </button>
-      </div>
+      </div> : null
+    }
+
+   {!showLogin &&  <SignUp setLogin={setLogin}/>}
+      
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
-import '../assets/login.css'
+import { Route, Routes } from 'react-router-dom'
+
 import Card from '../core/Card'
-import Login from './Login'
-import SignUp from './SignUp'
+import Login from '../Components/Login'
+import SignUp from '../Components/SignUp'
 
 export default function MainLayout() {
   const LoginPage = "Login page"
@@ -21,11 +21,11 @@ export default function MainLayout() {
       </div>
     </div>
     <Routes>
-      <Route path="login" element={<Login/>} ></Route>
-      <Route path="signUp" element={<SignUp/>} ></Route>
+      <Route path="/login" element={<Login/>} ></Route>
+      <Route path="/signUp" element={<SignUp/>} ></Route>
 
       {/* 👇️ redirect to /dashboard when user goes to / */}
-      <Route path="/" element={<Navigate to="/login" />} />
+      {/* <Route path="/" element={<Navigate to="/login" />} /> */}
 
         {/* 👇️ only match this when no other routes match */}
         <Route

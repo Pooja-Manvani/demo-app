@@ -5,16 +5,14 @@
 }
 
 .container-layout {
-    margin: 5%;
-    border-radius: 35px;
-    height: 80%;
-    
+  height: 100%;
 }
+
 
 .bg-figure{
     height: 100%;
     width: 100%;
-    border-radius: 35px;
+    
     margin: unset;
     opacity: 75%;
     image-rendering: pixelated;
@@ -27,9 +25,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 35px;
     background-image: linear-gradient(180deg,rgba(20, 20, 20, 0.637),rgba(97, 95, 95, 0.281));
-}
+  }
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .overlay-image{
+      border-radius: 35px;
+    }
+
+    .container-layout{
+      border-radius: 35px;
+      height: 70%;
+      margin: 5%;
+    }
+
+    .bg-figure {
+      border-radius: 35px;
+    }
+  }
 
 .custom-control-label {
     font-weight: 400;
@@ -40,7 +53,7 @@
   .forgot-password a {
     text-align: right;
     font-size: 13px;
-    padding-top: 10px;
+    padding-top: 5px;
     color: #7f7d7d;
     margin: 0;
   }
@@ -48,9 +61,9 @@
   .forgot-password a {
     color: #167bff;
   }
-
-  .btn-custom {
-    background-color: palevioletred;
-    font-weight: bold;
-    border: 1px solid pink;
-  }
+.logo-custom{
+  height: 100px;
+  width: 250px;
+  overflow: hidden;
+}
+  

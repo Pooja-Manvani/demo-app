@@ -1,0 +1,20 @@
+// Card styles goes here
+.wrapper-card {
+    padding: 10px;
+    background-color: white;
+    border: .75px solid pink;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column; 
+}
+
+.card-title {
+    color: palevioletred;
+}
+
+/* Medium devices (landscape tablets, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .wrapper-card {
+        width: 30%; 
+    }
+}

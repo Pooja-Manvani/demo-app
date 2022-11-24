@@ -1,0 +1,27 @@
+// Header area style
+// .badge-container{
+//     height: 40px;
+//     width: 40px;
+//     border-radius: 50%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-shrink: 0;
+//     margin-right: 0rem;
+//     font-size: small;
+// }
+// @include media-breakpoint-up(md) { 
+//     .badge-container{
+//         margin-right: 1.5rem;
+//         height: 50px;
+//         width: 50px;
+//         font-size: large;
+//     }
+//  }
+.wrapper-header {
+    padding: 20px;
+    border-bottom: 1px solid pink;
+    // background-color: #d9bec4c7;
+    background-color: black;
+}
+
