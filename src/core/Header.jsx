@@ -1,22 +1,28 @@
 import React  from 'react'
-import { useNavigate } from 'react-router-dom'
 // import sample from '../assets/media/Logo.mp4'
 
 
-export default function Header() {
-  const navigate = useNavigate()
-  
+export default function Header() {  
   return (
     <div className='wrapper-header'>
-      <div  className='justify-content-between d-flex'>
-        <div>
-          <h4 className='text-white'>Beauty is Power</h4>
-          {/* <video className='videoTag logo-custom' autoPlay loop muted>
-              <source src={sample} type='video/mp4' />
-          </video> */}
+      <div  className='d-flex flex-direction-column justify-content-between '>
+        <div  >
+          <h2 className='text-black ps-5 text-align-center m-0'><i>F</i>laskin</h2>
         </div>
-        <div className='align-self-center px-4'>
-          <button className='btn-custom border-radius-2' onClick={() => {navigate("/mainLayout")}} >Login </button>
+        <div className='align-self-center justify-content-flex-end px-4 d-flex'>
+          <div className='pe-5' >
+            <a href='home' className='text-black text-decoration-underline-black' >Home</a>
+          </div >
+          <div className='pe-5' >
+            <a href='about' className='text-black text-decoration-underline-black' >About Us</a>
+          </div>
+          <div className='pe-5' >
+            <a href='login' className='text-black text-decoration-underline-black' >Login</a>
+          </div>
+          <div className='pe-5' >
+            <span href='search' className='text-black  icon-search' ></span>
+            <span href='bag' className='text-black ps-5 icon-bag' ></span>
+          </div>
         </div>
       </div>
     </div>
