@@ -2,9 +2,10 @@ import React  from 'react'
 // import sample from '../assets/media/Logo.mp4'
 
 
-export default function Header() {  
+export default function Header(props) {  
+  const wapperHeader=`wrapper-header ${props.scrollClass}`
   return (
-    <div className='wrapper-header'>
+    <div className={wapperHeader}>
       <div  className='d-flex flex-direction-column justify-content-between '>
         <div  >
           <h2 className='text-black ps-5 text-align-center m-0'><i>F</i>laskin</h2>

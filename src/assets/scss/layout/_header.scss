@@ -10,7 +10,7 @@
 //     margin-right: 0rem;
 //     font-size: small;
 // }
-// @include media-breakpoint-up(md) { 
+// @include media-breakpoint-up(md) {
 //     .badge-container{
 //         margin-right: 1.5rem;
 //         height: 50px;
@@ -19,11 +19,16 @@
 //     }
 //  }
 .wrapper-header {
-    padding: 25px;
-    background-color: transparent;
-    position: absolute;
-    z-index:100;
-    color:black;
-    width: 100%;
+  padding: 25px;
+  background-color: transparent;
+  position: absolute;
+  z-index: 100;
+  color: black;
+  width: 100%;
+  transition: all .3s;
 }
 
+.showHeader {
+  background: white;
+  box-shadow: 20px -1px 10px 3px #adadad;
+}
