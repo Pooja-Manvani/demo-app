@@ -7,9 +7,13 @@ export default function ProductCard(props) {
 
   return (
     <div className="overflow-hidden">  
-      <div  className='overflow-hidden bg-grey opacity-card' >
-        <CardImg id='productCard' variant='top' src={imgSrc} />
+      <div className='overflow-hidden bg-grey opacity-card' >
+        <CardImg id='productCard' variant='top' src={imgSrc}/>
         {/* <span className='icon-cart hide' /> */}
+        <div className='card-overlay'>
+          <span className='icon icon-cart'></span>
+          <span className='icon icon-heart ms-3'></span>
+        </div>
       </div>
       {/* <div className='d-flex '>
         <title className='justify-content-center align-items-center' >{title}</title>
@@ -21,3 +25,4 @@ export default function ProductCard(props) {
     </div>
   )
 }
+

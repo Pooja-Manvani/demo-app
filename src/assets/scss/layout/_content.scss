@@ -70,8 +70,8 @@
 .carousel {
   top: 0;
   position: absolute;
-  width:100%;
-  height:75%;
+  width: 100%;
+  height: 75%;
 }
 
 .carousel .carousel-item.active {
@@ -80,35 +80,65 @@
 }
 
 .carousel .carousel-control-next {
-  display:none
+  display: none;
 }
 
 .carousel .carousel-control-prev {
-  display:none
+  display: none;
 }
 
 .carousel .carousel-caption {
   position: absolute;
-    /* right: 15%; */
-    bottom: 1.25rem;
-    left: 5%;
-    /* padding-top: 1.25rem; */
-    padding-bottom: 1.25rem;
-    color: #fff;
-    text-align: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 700px;
-    width: 650px;
+  /* right: 15%; */
+  bottom: 1.25rem;
+  left: 5%;
+  /* padding-top: 1.25rem; */
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 700px;
+  width: 650px;
 }
 
-.opacity-card:hover {
-  opacity: 0.25;
+.opacity-card {
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    .card-overlay {
+      opacity: 1;
+      visibility: visible;
+      z-index: 2;
+    }  
+  }
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba($color: #ffffff, $alpha: 0.8);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s all;
+    z-index: -1;
+  }
 }
 
 .zoom-effect:hover {
   transform: scale(1.2);
   overflow: hidden;
   transition: 0.5s all ease-out;
+}
+
+.zoom-in-effect {
+  overflow: hidden;
+  transition: 0.6s all ease-in 90deg;
+  transform: scale(1.2);
 }

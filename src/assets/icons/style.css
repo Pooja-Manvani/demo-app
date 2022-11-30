@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?byyb7g');
-  src:  url('fonts/icomoon.eot?byyb7g#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?byyb7g') format('truetype'),
-    url('fonts/icomoon.woff?byyb7g') format('woff'),
-    url('fonts/icomoon.svg?byyb7g#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ufu6j5');
+  src:  url('fonts/icomoon.eot?ufu6j5#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ufu6j5') format('truetype'),
+    url('fonts/icomoon.woff?ufu6j5') format('woff'),
+    url('fonts/icomoon.svg?ufu6j5#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,7 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -25,6 +25,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-close:before {
+  content: "\e906";
+}
+.icon-minus:before {
+  content: "\e907";
+}
+.icon-plus:before {
+  content: "\e908";
+}
 .icon-forward:before {
   content: "\e900";
 }
