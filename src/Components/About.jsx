@@ -3,29 +3,40 @@ import { CardImg } from "react-bootstrap";
 import SrcImg from "../assets/images/img7.jpg";
 import Accordion from "react-bootstrap/Accordion";
 import CardHeader from "react-bootstrap/esm/CardHeader";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AccordionHeader from "react-bootstrap/esm/AccordionHeader";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-export default function About(props) {
+export default function About() {
   useEffect(() => {
     AOS.init();
+    AOS.refresh();
   }, []);
-
   return (
-    <div className="container mt-5 overflow-hidden">
+    <div className="container d-flex mb-5 mt-5 overflow-hidden">
       {/* Image section */}
-      <div
-      >
-        <CardImg src={SrcImg} className="w-50"  data-aos="zoom-in" />
+      <div className="w-50">
+        <CardImg src={SrcImg} />
       </div>
+      {/* <div className="w-50" 
+      data-aos="zoom-out" 
+      data-aos-easing="ease-in"
+      data-aos-once="false"
+      >
+          <img src={SrcImg} className="" alt="logo" />
+        </div> */}
       {/* Accordion start */}
-      <div className="container w-50 overflow-hidden">
+      <div className="container w-50 m-5 me-0 overflow-hidden align-self-center ">
         <Accordion defaultActiveKey="0">
-          <Accordion.Item eventKey="0">
-            <CardHeader className="d-flex p-4 align-items-center justify-content-between text-center">
-              <p className="m-0 fs-4 fw-lighter">OUR PROCCESS</p>
+          <Accordion.Item eventKey="0" >
+            {/* <CardHeader className="d-flex p-4 align-items-center justify-content-between text-center"> */}
+              {/* <p className="m-0 fs-4 fw-lighter">OUR PROCCESS</p>
               <span className="icon-plus fs-2 fw-lighter"></span>
-            </CardHeader>
+            </CardHeader> */}
+            <AccordionHeader className="d-flex justify-content-between" >
+              <p className="m-0 fs-4 fw-lighter">CRAFTMANSHIP</p>
+              <span className="icon-plus fs-2 fw-lighter"></span>
+            </AccordionHeader>
             <Accordion.Body>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -69,7 +80,7 @@ export default function About(props) {
         </Accordion>
       </div>
       {/* Accordion end */}
-      <div style={{ height: "600px" }}>dgerg</div>
+
     </div>
   );
 }

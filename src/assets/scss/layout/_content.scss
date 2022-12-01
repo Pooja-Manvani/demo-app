@@ -77,7 +77,15 @@
 .carousel .carousel-item.active {
   display: flex;
   justify-content: flex-end;
+
 }
+
+// @include media-breakpoint-down(md) { 
+//   .carousel .carousel-item.active {
+//     display: flex;
+//     flex-grow: 1;
+//   }
+//  }
 
 .carousel .carousel-control-next {
   display: none;
@@ -87,21 +95,29 @@
   display: none;
 }
 
-.carousel .carousel-caption {
-  position: absolute;
-  /* right: 15%; */
-  bottom: 1.25rem;
-  left: 5%;
-  /* padding-top: 1.25rem; */
-  padding-bottom: 1.25rem;
-  color: #fff;
-  text-align: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 700px;
-  width: 650px;
-}
+  .carousel .carousel-caption {
+    position: absolute;               
+    right: 15%; 
+    bottom: 1.25rem;
+    left: 5%;
+    padding-top: 1.25rem; 
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 360px;
+    width: 650px;
+  }
+ 
+
+ @media screen and (max-width: 425px){
+  .carousel .carousel-caption{
+     display: none;
+   }
+ }
+
 
 .opacity-card {
   position: relative;
@@ -131,14 +147,11 @@
   }
 }
 
-.zoom-effect:hover {
-  transform: scale(1.2);
-  overflow: hidden;
-  transition: 0.5s all ease-out;
+.accordion-button::after{
+  background-image: none;
+  display: none;
 }
 
-.zoom-in-effect {
-  overflow: hidden;
-  transition: 0.6s all ease-in 90deg;
-  transform: scale(1.2);
+[data-aos='rotate-round'].aos-animate {
+  transform: rotate(0deg);
 }
