@@ -12,6 +12,7 @@ export default function ProductCard(props) {
         {/* <span className='icon-cart hide' /> */}
         <div className='card-overlay'>
           <span className='icon icon-cart'></span>
+          <span className='icon icon-eye ms-3'></span>
           <span className='icon icon-heart ms-3'></span>
         </div>
       </div>

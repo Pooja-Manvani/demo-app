@@ -12,9 +12,22 @@ import product4 from '../assets/images/Product4.jpg'
 import product5 from '../assets/images/Product5.jpg'
 
 export default function ProductSlider() {
+//   const enableSwiper = function() {
+//     mySwiper = new Swiper ('.swiper-container', {
+//        loop: true,
+//        slidesPerView: 'auto',
+//        centeredSlides: true,
+//        a11y: true,
+//        keyboardControl: true,
+//        grabCursor: true,
+//        // pagination
+//        pagination: '.swiper-pagination',
+//        paginationClickable: true,
+//     });
+//  };
   return (
     <div className='py-4 px-4 justify-content-center bg-yellow mx-5' >
-      <Swiper 
+      <Swiper
         freeMode={true}
         grabCursor={true}
         modules={[FreeMode]}

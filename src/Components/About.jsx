@@ -1,43 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { CardImg } from "react-bootstrap";
 import SrcImg from "../assets/images/img7.jpg";
 import Accordion from "react-bootstrap/Accordion";
-import CardHeader from "react-bootstrap/esm/CardHeader";
 import AccordionHeader from "react-bootstrap/esm/AccordionHeader";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function About() {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  const [toggle, settoggle] = useState(false);
   return (
     <div className="container d-flex mb-5 mt-5 overflow-hidden">
       {/* Image section */}
-      <div className="w-50">
-        <CardImg src={SrcImg} />
+      <div className="w-50 d-flex justify-content-end">
+        <CardImg src={SrcImg} className="about-container-img me-5" />
       </div>
-      {/* <div className="w-50" 
-      data-aos="zoom-out" 
-      data-aos-easing="ease-in"
-      data-aos-once="false"
-      >
-          <img src={SrcImg} className="" alt="logo" />
-        </div> */}
       {/* Accordion start */}
-      <div className="container w-50 m-5 me-0 overflow-hidden align-self-center ">
+      <div className="container w-50 m-3 ms-0 me-5 p-5 overflow-hidden align-self-center justify-content-end ">
         <Accordion defaultActiveKey="0">
-          <Accordion.Item eventKey="0" >
-            {/* <CardHeader className="d-flex p-4 align-items-center justify-content-between text-center"> */}
-              {/* <p className="m-0 fs-4 fw-lighter">OUR PROCCESS</p>
-              <span className="icon-plus fs-2 fw-lighter"></span>
-            </CardHeader> */}
-            <AccordionHeader className="d-flex justify-content-between" >
-              <p className="m-0 fs-4 fw-lighter">CRAFTMANSHIP</p>
-              <span className="icon-plus fs-2 fw-lighter"></span>
+          
+          <Accordion.Item eventKey="0">
+            <AccordionHeader
+              className="d-flex justify-content-between"
+              onClick={() => settoggle(!toggle)}
+            >
+              <p className="m-0 fs-5 fw-lighter">OUR PROCCESS</p>
+              {toggle ? (
+                <span className="icon-minus"></span>
+                ) : (
+                <span className="icon-plus"></span>
+              )}
             </AccordionHeader>
-            <Accordion.Body>
+            <Accordion.Body className="accordion-body-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -48,11 +39,17 @@ export default function About() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <CardHeader className="d-flex p-4 align-items-center justify-content-between text-center">
-              <p className="m-0 fs-4 fw-lighter">CRAFTMANSHIP</p>
-              <span className="icon-plus fs-2 fw-lighter"></span>
-            </CardHeader>
-            <Accordion.Body>
+            <AccordionHeader className="d-flex justify-content-between"
+             onClick={() => settoggle(!toggle)}
+             >
+              <p className="m-0 fs-5 fw-lighter">CRAFTMANSHIP</p>
+              {toggle ? (
+                <span className="icon-minus"></span>
+                ) : (
+                <span className="icon-plus"></span>
+              )}
+            </AccordionHeader>
+            <Accordion.Body className="accordion-body-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -62,12 +59,19 @@ export default function About() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2">
-            <CardHeader className="d-flex p-4 align-items-center justify-content-between text-center">
-              <p className="m-0 fs-4 fw-lighter">QUALITY MATERIAL</p>
-              <span className="icon-plus fs-2 fw-lighter"></span>
-            </CardHeader>
-            <Accordion.Body>
+          <Accordion.Item eventKey="2" className="border-0">
+            <AccordionHeader
+            className="d-flex justify-content-between"
+            onClick={() => settoggle(!toggle)}
+            >
+              <p className="m-0 fs-5 fw-lighter">QUALITY MATERIAL</p>
+              {toggle ? (
+                <span className="icon-minus"></span>
+                ) : (
+                <span className="icon-plus"></span>
+              )}
+            </AccordionHeader>
+            <Accordion.Body className="accordion-body-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -80,7 +84,6 @@ export default function About() {
         </Accordion>
       </div>
       {/* Accordion end */}
-
     </div>
   );
 }

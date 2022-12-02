@@ -32,3 +32,9 @@
   background: white;
   box-shadow: 20px -1px 10px 3px #adadad;
 }
+
+@media screen and (max-width: 425px){
+   .wrapper-header {
+    display: none;
+   } 
+}

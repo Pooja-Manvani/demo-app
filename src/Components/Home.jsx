@@ -1,5 +1,6 @@
 import React from "react";
 import About from "./About";
+import Contact from "./Contact";
 import ProductSlider from "./ProductSlider";
 import Slider from "./Slider";
 
@@ -15,6 +16,9 @@ export default function Home() {
       </div>
       <div>
         <About />
+      </div>
+      <div>
+        <Contact />
       </div>
     </div>
   );
