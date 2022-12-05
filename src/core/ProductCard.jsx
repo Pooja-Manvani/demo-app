@@ -8,7 +8,7 @@ export default function ProductCard(props) {
   return (
     <div className="overflow-hidden">  
       <div className='overflow-hidden bg-grey opacity-card' >
-        <CardImg id='productCard' variant='top' src={imgSrc}/>
+        <CardImg  variant='top' src={imgSrc}/>
         {/* <span className='icon-cart hide' /> */}
         <div className='card-overlay'>
           <span className='icon icon-cart'></span>

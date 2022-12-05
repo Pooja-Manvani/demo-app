@@ -17,7 +17,7 @@ function Slider() {
             />
             <Carousel.Caption>
                 <h5>First slide label</h5>
-                <h1>
+                <h1 className='font-carosuel'>
                 Nulla vitae elit libero, a pharetra augue mollis interdum.
                 </h1>
             </Carousel.Caption>

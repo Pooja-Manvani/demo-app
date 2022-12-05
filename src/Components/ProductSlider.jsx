@@ -12,30 +12,51 @@ import product4 from '../assets/images/Product4.jpg'
 import product5 from '../assets/images/Product5.jpg'
 
 export default function ProductSlider() {
-//   const enableSwiper = function() {
-//     mySwiper = new Swiper ('.swiper-container', {
-//        loop: true,
-//        slidesPerView: 'auto',
-//        centeredSlides: true,
-//        a11y: true,
-//        keyboardControl: true,
-//        grabCursor: true,
-//        // pagination
-//        pagination: '.swiper-pagination',
-//        paginationClickable: true,
-//     });
-//  };
   return (
-    <div className='py-4 px-4 justify-content-center bg-yellow mx-5' >
+    <div className=' py-4 px-4 justify-content-center mx-md-5' >
       <Swiper
         freeMode={true}
         grabCursor={true}
         modules={[FreeMode]}
         className='mySwiper'
         slidesPerView={5}
-        spaceBetween={30}
+        spaceBetween={20}
+        breakpoints={{
+          320: {
+            width: 320,
+            slidesPerView: 1,
+          },
+          375: {
+            width: 375,
+            slidesPerView: 1,
+          },
+          425: {
+            width: 425,
+            slidesPerView: 1,
+          },
+          640: {
+            width: 640,
+            slidesPerView: 2,
+          },
+          768: {
+            width: 768,
+            slidesPerView: 3,
+          },
+          860: {
+            width: 860,
+            slidesPerView: 4,
+          },
+          1024: {
+            width: 1024,
+            slidesPerView: 5,
+          },
+          1440: {
+            width: 1440,
+            slidesPerView: 5,
+          },
+        }}
       >
-        <SwiperSlide className='w-10'>
+        <SwiperSlide className='w-10 '>
           <ProductCard data={{imgSrc: product1}}  />
         </SwiperSlide>
 

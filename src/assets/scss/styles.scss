@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Yantramanav:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Yantramanav:wght@100;300;400;500&display=swap');
 
 // Project base and component style import
 @import '../../assets/scss/base/index';
@@ -11,5 +13,5 @@
 @import '../../assets/scss/utilities/index';
 // @import './assets/icons/style.css';
 @import '../icons/style.css';
-@import '../../../node_modules/aos/dist/aos.css'
+@import '../../../node_modules/aos/dist/aos.css';
 // // Project Specific Components

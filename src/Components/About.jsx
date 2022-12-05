@@ -1,19 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CardImg } from "react-bootstrap";
 import SrcImg from "../assets/images/img7.jpg";
 import Accordion from "react-bootstrap/Accordion";
 import AccordionHeader from "react-bootstrap/esm/AccordionHeader";
+import AOS from 'aos';
 
 export default function About() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   const [toggle, settoggle] = useState(false);
   return (
-    <div className="container d-flex mb-5 mt-5 overflow-hidden">
+    <div className=" container d-lg-flex mb-md-5 mt-md-5 overflow-hidden">
       {/* Image section */}
-      <div className="w-50 d-flex justify-content-end">
-        <CardImg src={SrcImg} className="about-container-img me-5" />
+      <div className="w-lg-50 d-flex justify-content-center justify-content-lg-end" >
+        <CardImg src={SrcImg} className="about-container-img d-md-block d-none" />
       </div>
       {/* Accordion start */}
-      <div className="container w-50 m-3 ms-0 me-5 p-5 overflow-hidden align-self-center justify-content-end ">
+      <div className="container w-lg-50 m-3 ms-0 p-md-5 pe-lg-0 overflow-hidden align-self-center justify-content-lg-end ">
         <Accordion defaultActiveKey="0">
           
           <Accordion.Item eventKey="0">
