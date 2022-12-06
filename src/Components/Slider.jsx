@@ -16,9 +16,9 @@ function Slider() {
                 alt="First slide"
             />
             <Carousel.Caption>
-                <h5>First slide label</h5>
-                <h1 className='font-carosuel'>
-                Nulla vitae elit libero, a pharetra augue mollis interdum.
+                <h5 className='font-s-carosuel'>BEAUTIFUL FLORAL AROMA</h5>
+                <h1 className='font-x-carosuel'>
+                EXPERIENCE THE MOST REFINDED SCENTS
                 </h1>
             </Carousel.Caption>
             </Carousel.Item>
@@ -29,8 +29,8 @@ function Slider() {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h5>Second slide label</h5>
-            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+            <h5 className='font-s-carosuel'>POIGNANT AND GRACEFUL</h5>
+            <h1 className='font-x-carosuel'>MINT SENCTS WITH THE HINT OF CITRUS</h1>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -40,9 +40,9 @@ function Slider() {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h5>Third slide label</h5>
-            <h1>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            <h5 className='font-s-carosuel'>NEW ELEGANT FRAGRANCES</h5>
+            <h1 className='font-x-carosuel'>
+              LUXURIOUS PERFUMES FOR EVERY WOMEN
             </h1>
           </Carousel.Caption>
         </Carousel.Item>

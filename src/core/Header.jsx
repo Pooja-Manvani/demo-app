@@ -1,24 +1,24 @@
 import React  from 'react'
-// import sample from '../assets/media/Logo.mp4'
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Header(props) {  
-  const wapperHeader=`wrapper-header ${props.scrollClass}`
+  const wapperHeader=`wrapper-header ${props.scrollClass}`;
+  const navigate = useNavigate();
   return (
     <div className={wapperHeader}>
-      <div  className='d-flex flex-direction-column justify-content-between '>
+      <div  className='d-flex flex-direction-column justify-content-between font-yantramanav'>
         <div  >
           <h2 className='text-black ps-5 text-align-center m-0'><i>F</i>laskin</h2>
         </div>
-        <div className='align-self-center justify-content-flex-end px-4 d-flex'>
+        <div className='menu-display  px-4 '>
           <div className='pe-5' >
-            <a href='home' className='text-black text-decoration-underline-black' >Home</a>
+            <a href='home' className='text-black text-decoration-underline-black ' >HOME</a>
           </div >
           <div className='pe-5' >
-            <a href='about' className='text-black text-decoration-underline-black' >About Us</a>
+            <a onClick={props.scrollDown} className='text-black text-decoration-underline-black' >ABOUT US</a>
           </div>
           <div className='pe-5' >
-            <a href='login' className='text-black text-decoration-underline-black' >Login</a>
+            <a onClick={() => navigate('/login')} className='text-black text-decoration-underline-black' >LOG-IN</a>
           </div>
           <div className='pe-5' >
             <span href='search' className='text-black  icon-search' ></span>
