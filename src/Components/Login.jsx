@@ -1,50 +1,65 @@
-import React from 'react'
+import React from "react";
+import ReactModal from "react-modal";
 
-export default function Login() {
-  
+export default function Login(props) {
   return (
-    <form className='p-lg-4 p-2' >
- <h2 className="card-title text-center">Login Page</h2>
-    <div className="mb-3">
-      <label className='fw-bold align-items-start' >Email address</label>
-      <input
-        type="email"
-        className="form-control"
-        placeholder="Enter email"
-      />
-    </div>
+    <ReactModal
+      className="overlay-modal"
+      isOpen={props.openModal}
+      onRequestClose={props.closeModal}
+      shouldCloseOnOverlayClick={false}
+    >
+      <form className="login-form-wrapper my-5 bg-white container">
+        <div className="d-flex justify-content-center align-items-center flex-column border">
+          <h5 className="fw-normal mb-3 pb-3" >
+            Sign into your account
+          </h5>
 
-    <div className="mb-3">
-      <label className='fw-bold align-items-start' >Password</label>
-      <input
-        type="password"
-        className="form-control"
-        placeholder="Enter password"
-      />
-    </div>
+          <div className="form-outline mb-4" >
+            <input
+              type="email"
+              id="form2Example17"
+              className="form-control form-control-lg"
+            />
+            <label className="form-label" htmlFor="form2Example17" >
+              Email address
+            </label>
+          </div>
 
-    <div className="mb-3">
-      <div className="custom-control custom-checkbox">
-        <input
-          type="checkbox"
-          className="custom-control-input "
-          id="customCheckbox"
-        />
-        <label className="custom-control-label" htmlFor="customCheckbox">
-           Remember me
-        </label>
-      </div>
-    </div>
+          <div className="form-outline mb-4">
+            <input
+              type="password"
+              id="form2Example27"
+              className="form-control form-control-lg"
+            />
+            <label className="form-label" htmlFor="form2Example27">
+              Password
+            </label>
+          </div>
 
-    <div className="d-grid">
-      <button type="submit" className=" btn-custom">
-        Submit
-      </button>
-    </div>
-    <p className="forgot-password text-right text-primary mb-3 text-decoration-underline">
-      Forgot password?
-    </p>
-    
-  </form>
-  )
+          <div className="pt-1 mb-4">
+            <button className="btn btn-dark btn-lg btn-block" type="button">
+              Login
+            </button>
+          </div>
+
+          <a className="small text-muted" href="#!">
+            Forgot password?
+          </a>
+          <p className="mb-5 pb-lg-2"  >
+            Don't have an account?{" "}
+            <a href="#!" >
+              Register here
+            </a>
+          </p>
+          <a href="#!" className="small text-muted">
+            Terms of use.
+          </a>
+          <a href="#!" className="small text-muted">
+            Privacy policy
+          </a>
+        </div>
+      </form>
+    </ReactModal>
+  );
 }

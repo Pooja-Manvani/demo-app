@@ -1,9 +1,7 @@
 import React  from 'react'
-import { useNavigate } from 'react-router-dom';
 
 export default function Header(props) {  
   const wapperHeader=`wrapper-header ${props.scrollClass}`;
-  const navigate = useNavigate();
   return (
     <div className={wapperHeader}>
       <div  className='d-flex flex-direction-column justify-content-between font-yantramanav'>
@@ -18,7 +16,7 @@ export default function Header(props) {
             <a onClick={props.scrollDown} className='text-black text-decoration-underline-black' >ABOUT US</a>
           </div>
           <div className='pe-5' >
-            <a onClick={() => navigate('/login')} className='text-black text-decoration-underline-black' >LOG-IN</a>
+            <a onClick={props.getOpenModal} className='text-black text-decoration-underline-black' >LOG-IN</a>
           </div>
           <div className='pe-5' >
             <span href='search' className='text-black  icon-search' ></span>

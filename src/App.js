@@ -4,13 +4,13 @@ import Home from "./Components/Home";
 import Header from "./core/Header";
 import Footer from "./core/Footer";
 import { useState } from "react";
-import { BrowserRouter } from 'react-router-dom';
+import Login from "./Components/Login";
 
 function App() {
   let scrollRef 
   // scrollClass 
-
-  const [scrollClass, setscrollClass] = useState('')
+  const [openModal,setOpenModel] = useState(false);
+  const [scrollClass, setscrollClass] = useState('');
   const showHeader = (e) => {
     if (e.target.scrollTop > 60) {
       setscrollClass("showHeader");
@@ -18,7 +18,6 @@ function App() {
       setscrollClass('')
     }
   };
-  
 
   const getRef=(ref)=>{
     scrollRef =ref
@@ -26,15 +25,22 @@ function App() {
   const scrollDown = () => {
     scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }) 
   }
+  const getOpenModal = () => {
+   setOpenModel(true)
+  }
+  const closeModal = () => {
+    setOpenModel(false)
+  }
 
   return (
-    <BrowserRouter>
+    
     <div className="h-100 overflow-auto" onScroll={showHeader}>
-      <Header scrollClass={scrollClass} scrollDown={scrollDown} />
+      <Header scrollClass={scrollClass} scrollDown={scrollDown} getOpenModal={getOpenModal}  />
+       {openModal && <Login closeModal={closeModal} openModal={openModal}/>}
       <Home  getRef={getRef}/>
       <Footer />
     </div>
-    </BrowserRouter>
+    
   );
 }
 
