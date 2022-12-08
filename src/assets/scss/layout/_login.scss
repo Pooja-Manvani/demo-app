@@ -16,6 +16,11 @@
 .ReactModal__Overlay{
     z-index: 100000;
 }
+.ReactModal__Content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .divider:after,
 .divider:before {
@@ -23,4 +28,19 @@ content: "";
 flex: 1;
 height: 1px;
 background: #eee;
+}
+
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+    background-color: white;
+    padding: 2rem;
+}
+
+.login-text{
+    font-size: x-small;
 }

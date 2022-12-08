@@ -36,7 +36,7 @@ function App() {
     
     <div className="h-100 overflow-auto" onScroll={showHeader}>
       <Header scrollClass={scrollClass} scrollDown={scrollDown} getOpenModal={getOpenModal}  />
-       {openModal && <Login closeModal={closeModal} openModal={openModal}/>}
+       {openModal && <Login closeModal={closeModal} openModal={openModal} />}
       <Home  getRef={getRef}/>
       <Footer />
     </div>

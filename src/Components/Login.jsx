@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  Button,
+  Form,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  ModalTitle,
+} from "react-bootstrap";
 import ReactModal from "react-modal";
 
+const signin = "Sign-in";
+const signup = "Sign-Up";
+
 export default function Login(props) {
+  const [toggle, setToggle] = useState(false);
   return (
     <ReactModal
       className="overlay-modal"
@@ -9,57 +21,121 @@ export default function Login(props) {
       onRequestClose={props.closeModal}
       shouldCloseOnOverlayClick={false}
     >
-      <form className="login-form-wrapper my-5 bg-white container">
-        <div className="d-flex justify-content-center align-items-center flex-column border">
-          <h5 className="fw-normal mb-3 pb-3" >
-            Sign into your account
-          </h5>
-
-          <div className="form-outline mb-4" >
-            <input
-              type="email"
-              id="form2Example17"
-              className="form-control form-control-lg"
-            />
-            <label className="form-label" htmlFor="form2Example17" >
-              Email address
-            </label>
-          </div>
-
-          <div className="form-outline mb-4">
-            <input
-              type="password"
-              id="form2Example27"
-              className="form-control form-control-lg"
-            />
-            <label className="form-label" htmlFor="form2Example27">
-              Password
-            </label>
-          </div>
-
-          <div className="pt-1 mb-4">
-            <button className="btn btn-dark btn-lg btn-block" type="button">
-              Login
-            </button>
-          </div>
-
-          <a className="small text-muted" href="#!">
-            Forgot password?
-          </a>
-          <p className="mb-5 pb-lg-2"  >
-            Don't have an account?{" "}
-            <a href="#!" >
-              Register here
-            </a>
-          </p>
-          <a href="#!" className="small text-muted">
-            Terms of use.
-          </a>
-          <a href="#!" className="small text-muted">
-            Privacy policy
-          </a>
-        </div>
-      </form>
+      {toggle ? (
+        <Signin setToggle={setToggle} />
+      ) : (
+        <SignUp setToggle={setToggle} />
+      )}
     </ReactModal>
+  );
+}
+
+export function Signin(props) {
+  const settoggle = () => {
+    props.setToggle(false);
+  };
+  return (
+    <Form className="login-form-container">
+      <ModalHeader>
+        <ModalTitle>{signin} your account.</ModalTitle>
+      </ModalHeader>
+      <ModalBody className="d-flex flex-column mt-3 ">
+        <label htmlFor="username">
+          <input
+            type="text"
+            className="mb-3"
+            name="uname"
+            placeholder="Enter username"
+          />
+        </label>
+        <label htmlFor="password">
+          <input
+            type="text"
+            className="mb-3"
+            name="psw"
+            placeholder="Enter password"
+            />
+        </label>
+        <label className="login-text m-0 p-0 d-flex justify-content-start">
+          <input type="checkbox" className="me-2" name="remember" />
+          <span className="">Remember me</span>
+        </label>
+      </ModalBody>
+      <ModalFooter className=" ">
+        <Button
+          className="login-text m-2 p-0 px-1 d-flex justify-content-center"
+          onClick={props.closeModal}
+          >
+          Cancel
+        </Button>
+        <Button className="login-text m-2 p-0 px-1 d-flex justify-content-center">
+          Login
+        </Button>
+      </ModalFooter>
+      <span
+        className="psw login-text text-decoration-underline text-primary"
+        onClick={settoggle}
+      >
+        {" "}
+        Sign Up?
+      </span>
+    </Form>
+  );
+}
+
+export function SignUp(props) {
+  const settoggle = () => {
+    props.setToggle(true);
+  };
+  return (
+    <Form className="login-form-container">
+      <ModalHeader>
+        <ModalTitle>{signup} your account.</ModalTitle>
+      </ModalHeader>
+      <ModalBody className="d-flex flex-column mt-3 ">
+        <label htmlFor="username">
+          <input
+            type="text"
+            className="mb-3"
+            name="uname"
+            placeholder="Enter username"
+          />
+        </label>
+        <label htmlFor="password">
+          <input
+            type="text"
+            className="mb-3"
+            name="psw"
+            placeholder="Enter password"
+          />
+        </label>
+        <label htmlFor="repassword">
+          <input
+            type="text"
+            className="mb-3"
+            name="rpsw"
+            placeholder="Re-enter password"
+          />
+        </label>
+      </ModalBody>
+      <ModalFooter className=" ">
+        <Button
+          className="login-text m-2 p-0 px-1 d-flex justify-content-center"
+          onClick={props.closeModal}
+        >
+          Cancel
+        </Button>
+        <Button className="login-text m-2 p-0 px-1 d-flex justify-content-center">
+          Submit
+        </Button>
+      </ModalFooter>
+      <span
+        className="psw login-text text-decoration-underline text-primary"
+        onClick={settoggle}
+      >
+        {" "}
+        Sign In?
+      </span>
+    </Form>
   );
 }
