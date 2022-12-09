@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Alert,
   Button,
   Form,
   ModalBody,
@@ -8,44 +9,66 @@ import {
   ModalTitle,
 } from "react-bootstrap";
 import ReactModal from "react-modal";
+import { useNavigate } from "react-router-dom";
+import { useUserAuth } from "../context/AuthContext";
 
 const signin = "Sign-in";
 const signup = "Sign-Up";
 
 export default function Login(props) {
+  const {closeModal, openModal} = props
   const [toggle, setToggle] = useState(false);
   return (
     <ReactModal
       className="overlay-modal"
-      isOpen={props.openModal}
-      onRequestClose={props.closeModal}
+      isOpen={openModal}
+      onRequestClose={closeModal}
       shouldCloseOnOverlayClick={false}
     >
       {toggle ? (
-        <Signin setToggle={setToggle} />
+        <Signin setToggle={setToggle} closeModal={closeModal} openModal={openModal} />
       ) : (
-        <SignUp setToggle={setToggle} />
+        <SignUp setToggle={setToggle}  closeModal={closeModal} openModal={openModal} />
       )}
     </ReactModal>
   );
 }
 
 export function Signin(props) {
+  console.log('prop sign',props);
   const settoggle = () => {
     props.setToggle(false);
   };
+ 
+  const {closeModal} = props
+  const [email,setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); 
+  const { logIn } = useUserAuth();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await logIn(email, password);
+      closeModal();
+    } catch (err) {
+      setError(err.message);
+    }
+  };
   return (
-    <Form className="login-form-container">
-      <ModalHeader>
+    <Form onSubmit={handleSubmit} className="login-form-container"  >
+      <ModalHeader className="d-flex flex-column">
         <ModalTitle>{signin} your account.</ModalTitle>
+        <div>{error && <Alert variant="danger">{error}</Alert>}</div>
       </ModalHeader>
       <ModalBody className="d-flex flex-column mt-3 ">
-        <label htmlFor="username">
+        <label htmlFor="email">
           <input
             type="text"
             className="mb-3"
-            name="uname"
-            placeholder="Enter username"
+            name="email"
+            placeholder="Enter Email"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label htmlFor="password">
@@ -54,6 +77,7 @@ export function Signin(props) {
             className="mb-3"
             name="psw"
             placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
             />
         </label>
         <label className="login-text m-0 p-0 d-flex justify-content-start">
@@ -64,11 +88,11 @@ export function Signin(props) {
       <ModalFooter className=" ">
         <Button
           className="login-text m-2 p-0 px-1 d-flex justify-content-center"
-          onClick={props.closeModal}
+          onClick={closeModal}
           >
           Cancel
         </Button>
-        <Button className="login-text m-2 p-0 px-1 d-flex justify-content-center">
+        <Button type="submit" className="login-text m-2 p-0 px-1 d-flex justify-content-center">
           Login
         </Button>
       </ModalFooter>
@@ -87,18 +111,34 @@ export function SignUp(props) {
   const settoggle = () => {
     props.setToggle(true);
   };
+  const [email,setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(''); 
+  const {signUp } = useUserAuth();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+    try {
+      await signUp(email, password);
+      settoggle();
+    } catch (err) {
+      setError(err.message);
+    }
+  }
   return (
-    <Form className="login-form-container">
-      <ModalHeader>
+    <Form onSubmit={handleSubmit} className="login-form-container">
+      <ModalHeader className="d-flex flex-column">
         <ModalTitle>{signup} your account.</ModalTitle>
+        <div>{error && <Alert variant="danger">{error}</Alert>}</div>
       </ModalHeader>
       <ModalBody className="d-flex flex-column mt-3 ">
-        <label htmlFor="username">
+        <label htmlFor="email">
           <input
             type="text"
             className="mb-3"
-            name="uname"
-            placeholder="Enter username"
+            name="email"
+            placeholder="Enter email"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
         <label htmlFor="password">
@@ -107,6 +147,7 @@ export function SignUp(props) {
             className="mb-3"
             name="psw"
             placeholder="Enter password"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         <label htmlFor="repassword">
@@ -125,7 +166,7 @@ export function SignUp(props) {
         >
           Cancel
         </Button>
-        <Button className="login-text m-2 p-0 px-1 d-flex justify-content-center">
+        <Button className="login-text m-2 p-0 px-1 d-flex justify-content-center" type="submit" >
           Submit
         </Button>
       </ModalFooter>

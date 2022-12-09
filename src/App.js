@@ -5,6 +5,7 @@ import Header from "./core/Header";
 import Footer from "./core/Footer";
 import { useState } from "react";
 import Login from "./Components/Login";
+import { AuthContextProvider } from "./context/AuthContext";
 
 function App() {
   let scrollRef 
@@ -36,7 +37,9 @@ function App() {
     
     <div className="h-100 overflow-auto" onScroll={showHeader}>
       <Header scrollClass={scrollClass} scrollDown={scrollDown} getOpenModal={getOpenModal}  />
-       {openModal && <Login closeModal={closeModal} openModal={openModal} />}
+       <AuthContextProvider>
+         {openModal && <Login closeModal={closeModal} openModal={openModal} />}
+       </AuthContextProvider>
       <Home  getRef={getRef}/>
       <Footer />
     </div>
