@@ -9,14 +9,13 @@ import {
   ModalTitle,
 } from "react-bootstrap";
 import ReactModal from "react-modal";
-import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/AuthContext";
 
 const signin = "Sign-in";
 const signup = "Sign-Up";
 
 export default function Login(props) {
-  const {closeModal, openModal} = props
+  const { closeModal, openModal } = props;
   const [toggle, setToggle] = useState(false);
   return (
     <ReactModal
@@ -26,28 +25,36 @@ export default function Login(props) {
       shouldCloseOnOverlayClick={false}
     >
       {toggle ? (
-        <Signin setToggle={setToggle} closeModal={closeModal} openModal={openModal} />
+        <Signin
+          setToggle={setToggle}
+          closeModal={closeModal}
+          openModal={openModal}
+        />
       ) : (
-        <SignUp setToggle={setToggle}  closeModal={closeModal} openModal={openModal} />
+        <SignUp
+          setToggle={setToggle}
+          closeModal={closeModal}
+          openModal={openModal}
+        />
       )}
     </ReactModal>
   );
 }
 
 export function Signin(props) {
-  console.log('prop sign',props);
   const settoggle = () => {
     props.setToggle(false);
   };
- 
-  const {closeModal} = props
-  const [email,setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); 
+
+  const { closeModal } = props;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const { logIn } = useUserAuth();
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
       await logIn(email, password);
       closeModal();
@@ -56,7 +63,7 @@ export function Signin(props) {
     }
   };
   return (
-    <Form onSubmit={handleSubmit} className="login-form-container"  >
+    <Form onSubmit={handleSubmit} className="login-form-container">
       <ModalHeader className="d-flex flex-column">
         <ModalTitle>{signin} your account.</ModalTitle>
         <div>{error && <Alert variant="danger">{error}</Alert>}</div>
@@ -78,7 +85,7 @@ export function Signin(props) {
             name="psw"
             placeholder="Enter password"
             onChange={(e) => setPassword(e.target.value)}
-            />
+          />
         </label>
         <label className="login-text m-0 p-0 d-flex justify-content-start">
           <input type="checkbox" className="me-2" name="remember" />
@@ -89,10 +96,13 @@ export function Signin(props) {
         <Button
           className="login-text m-2 p-0 px-1 d-flex justify-content-center"
           onClick={closeModal}
-          >
+        >
           Cancel
         </Button>
-        <Button type="submit" className="login-text m-2 p-0 px-1 d-flex justify-content-center">
+        <Button
+          type="submit"
+          className="login-text m-2 p-0 px-1 d-flex justify-content-center"
+        >
           Login
         </Button>
       </ModalFooter>
@@ -111,20 +121,20 @@ export function SignUp(props) {
   const settoggle = () => {
     props.setToggle(true);
   };
-  const [email,setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); 
-  const {signUp } = useUserAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { signUp } = useUserAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
       await signUp(email, password);
       settoggle();
     } catch (err) {
       setError(err.message);
     }
-  }
+  };
   return (
     <Form onSubmit={handleSubmit} className="login-form-container">
       <ModalHeader className="d-flex flex-column">
@@ -166,7 +176,10 @@ export function SignUp(props) {
         >
           Cancel
         </Button>
-        <Button className="login-text m-2 p-0 px-1 d-flex justify-content-center" type="submit" >
+        <Button
+          className="login-text m-2 p-0 px-1 d-flex justify-content-center"
+          type="submit"
+        >
           Submit
         </Button>
       </ModalFooter>

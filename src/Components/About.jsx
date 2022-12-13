@@ -43,6 +43,7 @@ export default function About() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Accordion.Body>
           </Accordion.Item>
+          
           <Accordion.Item eventKey="1">
             <AccordionHeader className="d-flex justify-content-between"
              onClick={() => settoggle(!toggle)}

@@ -11,11 +11,11 @@ import {
  } from "firebase/auth";
  import {auth} from '../Components/Firebase'
 
-const authContext = createContext();
+ const authContext = createContext();
 
 
 export function AuthContextProvider({ children }) {
-    const [user,setUser] = useState('');
+    const [user,setUser] = useState();
     function signUp(email, password) {
         return createUserWithEmailAndPassword(auth, email, password);
     }
