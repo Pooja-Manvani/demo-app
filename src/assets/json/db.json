@@ -1,7 +1,22 @@
 {
     "Accordion":[
         {
-          
+            "eventKey":1,
+          "accordionId":1,
+          "accordionTitle":"OUR PROCCESS",
+          "accordionBody":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga cupiditate quasi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam."
+        },
+        {
+            "eventKey":2,
+          "accordionId":2,
+          "accordionTitle":"CRAFTMANSHIP",
+          "accordionBody":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga cupiditate quasi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam."
+        },
+        {
+            "eventKey":3,
+          "accordionId":3,
+          "accordionTitle":"QUALITY MATERIAL",
+          "accordionBody":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga cupiditate quasi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam."
         }
     ]
 }

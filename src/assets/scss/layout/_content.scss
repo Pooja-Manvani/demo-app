@@ -1,72 +1,22 @@
-// .wrapper {
-//     height: 100%;
-//     overflow: hidden;
-//     background-color: rgba(160, 160, 160, 0.384);
-// }
-
-// .container-layout {
-//   height: 100%;
-// }
-
-// .bg-figure{
-//     height: 100%;
-//     width: 100%;
-
-//     margin: unset;
-//     opacity: 75%;
-//     image-rendering: pixelated;
-//     background-image: url('https://img.freepik.com/free-photo/different-cosmetics-types-scattered-pink-table_23-2148046961.jpg?w=2000');
-// }
-
-// .overlay-image {
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     background-image: linear-gradient(180deg,rgba(20, 20, 20, 0.637),rgba(97, 95, 95, 0.281));
-//   }
-//   /* Medium devices (landscape tablets, 768px and up) */
-//   @media only screen and (min-width: 768px) {
-//     .overlay-image{
-//       border-radius: 35px;
-//     }
-
-//     .container-layout{
-//       border-radius: 35px;
-//       height: 70%;
-//       margin: 5%;
-//     }
-
-//     .bg-figure {
-//       border-radius: 35px;
-//     }
-//   }
-
-// .custom-control-label {
-//     font-weight: 400;
-//     padding-left: 5px;
-//   }
-
-//   .forgot-password,
-//   .forgot-password a {
-//     text-align: right;
-//     font-size: 13px;
-//     padding-top: 5px;
-//     color: #7f7d7d;
-//     margin: 0;
-//   }
-
-//   .forgot-password a {
-//     color: #167bff;
-//   }
-// .logo-custom{
-//   height: 100px;
-//   width: 250px;
-//   overflow: hidden;
-// }
-
 // Style for slider start
+.searchBoxCustom{
+  padding: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 95%;
+  overflow: hidden;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 20px -1px 30px 3px #adadad;
+}
+
 .carousel {
   top: 0;
   position: absolute;

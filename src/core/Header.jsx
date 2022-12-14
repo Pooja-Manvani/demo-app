@@ -1,12 +1,28 @@
 import React from "react";
+import { useState } from "react";
 import { useUserAuth } from "../context/AuthContext";
 
 export default function Header(props) {
 
-  // const { user } = useUserAuth();
+  const [showSearchBox, setSearchBox] = useState(false);
+  const { user, logOut } = useUserAuth();
+  const handleSignOut = async () => {
+    try{
+     await logOut();
+    }catch(err){
+      return err.message;
+    }
+  }
+  console.log(user);
   const wapperHeader = `wrapper-header ${props.scrollClass}`;
   return (
     <div className={wapperHeader}>
+      {showSearchBox && <div className="searchBoxCustom">
+            <input type="text" className="ps-2 border-0 cursor-pointer form-control "></input>
+            <div>
+              <span onClick={()=>setSearchBox(false)} className="icon-close fs-5 p-2"></span>
+            </div>
+          </div>}
       <div className="d-flex flex-direction-column justify-content-between font-yantramanav">
         <div>
           <h2 className="text-black ps-5 text-align-center m-0">
@@ -31,22 +47,23 @@ export default function Header(props) {
             </a>
           </div>
           <div className="pe-5">
-            <a
+            {!user && <a
               onClick={props.getOpenModal}
               className="text-black text-decoration-underline-black"
             >
               LOG-IN
-            </a>
-            <a className="text-black text-decoration-underline-black d-none">
+            </a>}
+            {user && <a onClick={() => handleSignOut()} className="text-black text-decoration-underline-black">
               LOG-OUT
-            </a>
+            </a>}
           </div>
           <div className="pe-5">
-            <span href="search" className="text-black  icon-search"></span>
-            <span href="bag" className="text-black ps-5 icon-bag"></span>
+            <span onClick={()=>setSearchBox(true)} className="text-black  icon-search"></span>
+            {user && <span href="bag" className="text-black ps-5 icon-bag"></span>}
           </div>
+         
 
-          <div id="menuToggle" className="align-items-center pt-1">
+          {user && <div id="menuToggle" className="align-items-center pt-1">
             <input type="checkbox" />
             <span></span>
             <span></span>
@@ -68,7 +85,9 @@ export default function Header(props) {
                 <li>Show me more</li>
               </a>
             </ul>
-          </div>
+          </div>}
+
+              
         </div>
       </div>
     </div>
