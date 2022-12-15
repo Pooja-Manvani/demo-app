@@ -1,22 +1,74 @@
 {
     "Accordion":[
         {
-            "eventKey":1,
-          "accordionId":1,
+          "id":1,
+          "eventKey":0,
           "accordionTitle":"OUR PROCCESS",
           "accordionBody":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga cupiditate quasi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam."
         },
         {
-            "eventKey":2,
-          "accordionId":2,
+          "id":2,
+          "eventKey":1,
           "accordionTitle":"CRAFTMANSHIP",
           "accordionBody":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga cupiditate quasi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam."
         },
         {
-            "eventKey":3,
-          "accordionId":3,
+          "id":3,
+          "eventKey":2,
           "accordionTitle":"QUALITY MATERIAL",
           "accordionBody":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga cupiditate quasi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam.asi sunt vel modi voluptatem ipsum, minus quidem labore nam."
         }
+    ],
+    "Carosuel":[
+      {
+        "id":1,
+        "image":"img1.jpg",
+        "title":"BEAUTIFUL FLORAL AROMA",
+        "description":"EXPERIENCE THE MOST REFINDED SCENTS"
+      },
+      {
+        "id":2,
+        "image":"img2.jpg",
+        "title":"POIGNANT AND GRACEFUL",
+        "description":"MINT SENCTS WITH THE HINT OF CITRUS"
+      },
+      {
+        "id":3,
+        "image":"img3.jpg",
+        "title":"NEW ELEGANT FRAGRANCES",
+        "description":"LUXURIOUS PERFUMES FOR EVERY WOMEN"
+      }
+    ],
+    "ProductSlider":[
+      {
+        "image":"Product1.jpg"
+      },
+      {
+        "image":"Product2.jpg"
+      },
+      {
+        "image":"Product3.jpg"
+      },
+      {
+        "image":"Product4.jpg"
+      },
+      {
+        "image":"Product5.jpg"
+      },
+      {
+        "image":"Product1.jpg"
+      },
+      {
+        "image":"Product2.jpg"
+      },
+      {
+        "image":"Product3.jpg"
+      },
+      {
+        "image":"Product4.jpg"
+      },
+      {
+        "image":"Product5.jpg"
+      }
     ]
 }

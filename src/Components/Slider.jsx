@@ -1,28 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import image1 from '../assets/images/img1.jpg'
-import image2 from '../assets/images/img2.jpg'
-import image3 from '../assets/images/img3.jpg'
-
+import {getCarosuelData}from '../api/axios';
 
 function Slider() {
-
+const [carosuelData, setCarosuelData] = useState([]);
+useEffect(() => {
+  getCarosuel();
+}, []);
+const getCarosuel = async () => {
+ const response = await getCarosuelData();
+ return setCarosuelData(response.data);
+}
     return (
       <Carousel variant="dark" slide={false} >
-           <Carousel.Item>
+        {
+          carosuelData.map((data)=> (
+           <Carousel.Item key={data.id}>
             <img
                 className="d-block w-75"
-                src={image1}
+                src={require(`../assets/images/${data.image}`)}
                 alt="First slide"
             />
             <Carousel.Caption>
-                <h5 className='font-s-carosuel'>BEAUTIFUL FLORAL AROMA</h5>
+                <h5 className='font-s-carosuel'>{data.title}</h5>
                 <h1 className='font-x-carosuel'>
-                EXPERIENCE THE MOST REFINDED SCENTS
+                {data.description}
                 </h1>
             </Carousel.Caption>
             </Carousel.Item>
-        <Carousel.Item>
+          ))
+        }
+        {/* <Carousel.Item>
           <img
             className="d-block w-75"
             src={image2}
@@ -45,7 +54,7 @@ function Slider() {
               LUXURIOUS PERFUMES FOR EVERY WOMEN
             </h1>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     );
   }

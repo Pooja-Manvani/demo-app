@@ -13,12 +13,11 @@ export default function Header(props) {
       return err.message;
     }
   }
-  console.log(user);
   const wapperHeader = `wrapper-header ${props.scrollClass}`;
   return (
     <div className={wapperHeader}>
       {showSearchBox && <div className="searchBoxCustom">
-            <input type="text" className="ps-2 border-0 cursor-pointer form-control "></input>
+            <input id="globalSearch" type="text" className="ps-2 border-0 cursor-pointer form-control "></input>
             <div>
               <span onClick={()=>setSearchBox(false)} className="icon-close fs-5 p-2"></span>
             </div>
@@ -33,7 +32,7 @@ export default function Header(props) {
           <div className="pe-5">
             <a
               href="home"
-              className="text-black text-decoration-underline-black "
+              className="text-black text-decoration-underline-black cursor-pointer"
             >
               HOME
             </a>
@@ -41,7 +40,7 @@ export default function Header(props) {
           <div className="pe-5">
             <a
               onClick={props.scrollDown}
-              className="text-black text-decoration-underline-black"
+              className="text-black text-decoration-underline-black cursor-pointer"
             >
               ABOUT US
             </a>
@@ -49,21 +48,23 @@ export default function Header(props) {
           <div className="pe-5">
             {!user && <a
               onClick={props.getOpenModal}
-              className="text-black text-decoration-underline-black"
+              className="text-black text-decoration-underline-black cursor-pointer"
             >
               LOG-IN
             </a>}
-            {user && <a onClick={() => handleSignOut()} className="text-black text-decoration-underline-black">
+            {user && <a onClick={() => handleSignOut()} className="text-black text-decoration-underline-black cursor-pointer">
               LOG-OUT
             </a>}
           </div>
           <div className="pe-5">
-            <span onClick={()=>setSearchBox(true)} className="text-black  icon-search"></span>
-            {user && <span href="bag" className="text-black ps-5 icon-bag"></span>}
+            <label htmlFor="globalSearch">
+              <span onClick={()=>setSearchBox(true)} className="text-black  icon-search cursor-pointer"></span>
+            </label>
+            {user && <span href="bag" className="text-black ps-5 icon-bag cursor-pointer"></span>}
           </div>
          
 
-          {user && <div id="menuToggle" className="align-items-center pt-1">
+          {user && <div id="menuToggle" className="align-items-center pt-1 cursor-pointer">
             <input type="checkbox" />
             <span></span>
             <span></span>

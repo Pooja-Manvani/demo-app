@@ -50,6 +50,6 @@ export default function Portal() {
           </p>
         </form>
       </div>
-    ),
-    document.getElementById("portal")
+    )
+    // document.getElementById("portal")
 }
