@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useUserAuth } from "../context/AuthContext";
 
 export default function Header(props) {
-
+console.log('====================================');
+console.log(props,'header props');
   const [showSearchBox, setSearchBox] = useState(false);
   const { user, logOut } = useUserAuth();
   const handleSignOut = async () => {
@@ -31,7 +32,7 @@ export default function Header(props) {
         <div className="menu-display  px-4 ">
           <div className="pe-5">
             <a
-              href="home"
+              onClick={()=>window.location.reload()}
               className="text-black text-decoration-underline-black cursor-pointer"
             >
               HOME
@@ -70,20 +71,20 @@ export default function Header(props) {
             <span></span>
             <span></span>
             <ul id="menu">
-              <a href="#">
+              <a onClick={()=>window.location.reload()}>
                 <li>Home</li>
               </a>
-              <a href="#">
+              <a onClick={props.scrollDown}>
                 <li>About</li>
               </a>
-              <a href="#">
-                <li>Info</li>
+              <a >
+                <li>Product</li>
               </a>
               <a href="#">
-                <li>Contact</li>
+                <li>wishlist</li>
               </a>
-              <a href="https://erikterwan.com/" target="_blank">
-                <li>Show me more</li>
+              <a onClick={() => handleSignOut()} >
+                <li>Log-out</li>
               </a>
             </ul>
           </div>}

@@ -21,7 +21,7 @@ function App() {
   };
 
   const getRef=(ref)=>{
-    scrollRef =ref
+    scrollRef = ref
   }
   const scrollDown = () => {
     scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }) 
@@ -39,7 +39,7 @@ function App() {
        <AuthContextProvider>
         <Header scrollClass={scrollClass} scrollDown={scrollDown} getOpenModal={getOpenModal}  />
          {openModal && <Login closeModal={closeModal} openModal={openModal} />}
-        <Home  getRef={getRef}/>
+        <Home  getRef={getRef} />
         <Footer />
        </AuthContextProvider>
     </div>

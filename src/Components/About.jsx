@@ -11,7 +11,6 @@ export default function About() {
     AOS.init();
     AOS.refresh();
   }, []);
-  const [toggle, settoggle] = useState(false);
   const [accodionData,setAccordionData] = useState([]);
   useEffect(() => {
     getData();
@@ -28,7 +27,7 @@ export default function About() {
       </div>
       {/* Accordion start */}
       <div className="container w-lg-50 m-3 ms-0 p-md-5 pe-lg-0 overflow-hidden align-self-center justify-content-lg-end ">
-        <Accordion defaultActiveKey={0} muitipleOpen={false} >
+        <Accordion defaultActiveKey={0} >
         {accodionData.map((data)=> (
           <Accordion.Item eventKey={data.eventKey} >
             <AccordionHeader className="d-flex justify-content-between" >

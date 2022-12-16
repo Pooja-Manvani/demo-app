@@ -31,30 +31,6 @@ const getCarosuel = async () => {
             </Carousel.Item>
           ))
         }
-        {/* <Carousel.Item>
-          <img
-            className="d-block w-75"
-            src={image2}
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h5 className='font-s-carosuel'>POIGNANT AND GRACEFUL</h5>
-            <h1 className='font-x-carosuel'>MINT SENCTS WITH THE HINT OF CITRUS</h1>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block  w-75"
-            src={image3}
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h5 className='font-s-carosuel'>NEW ELEGANT FRAGRANCES</h5>
-            <h1 className='font-x-carosuel'>
-              LUXURIOUS PERFUMES FOR EVERY WOMEN
-            </h1>
-          </Carousel.Caption>
-        </Carousel.Item> */}
       </Carousel>
     );
   }

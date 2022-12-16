@@ -41,34 +41,54 @@
     ],
     "ProductSlider":[
       {
-        "image":"Product1.jpg"
+        "image":"Product1.jpg",
+        "price":245,
+        "title":"Versace"
       },
       {
-        "image":"Product2.jpg"
+        "image":"Product2.jpg",
+        "price":250,
+        "title":"Cannel"      
       },
       {
-        "image":"Product3.jpg"
+        "image":"Product3.jpg",
+        "price":345,
+        "title":"Lovender"
       },
       {
-        "image":"Product4.jpg"
+        "image":"Product4.jpg",
+        "price":455,
+        "title":"Fly-shy"
       },
       {
-        "image":"Product5.jpg"
+        "image":"Product5.jpg",
+        "price":200,
+        "title":"Sunna-Gold"
       },
       {
-        "image":"Product1.jpg"
+        "image":"Product1.jpg",
+        "price":245,
+        "title":"Versace"
       },
       {
-        "image":"Product2.jpg"
+        "image":"Product2.jpg",
+        "price":250,
+        "title":"Cannel"
       },
       {
-        "image":"Product3.jpg"
+        "image":"Product3.jpg",
+        "price":345,
+        "title":"Lovender"
       },
       {
-        "image":"Product4.jpg"
+        "image":"Product4.jpg",
+        "price":455,
+        "title":"Fly-shy"
       },
       {
-        "image":"Product5.jpg"
+        "image":"Product5.jpg",
+        "price":200,
+        "title":"Sunna-Gold"
       }
     ]
 }
