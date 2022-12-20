@@ -22,7 +22,7 @@ export default function Login(props) {
       className="overlay-modal"
       isOpen={openModal}
       onRequestClose={closeModal}
-      shouldCloseOnOverlayClick={false}
+      shouldCloseOnOverlayClick={true}
     >
       {toggle ? (
         <Signin

@@ -4,7 +4,7 @@ import ProductsInfoCard from './ProductsInfoCard'
 export default function Product() {
   
   return (
-    <div className='container border border-1'>
+    <div className='container border border-1 d-none'>
       <ProductsInfoCard />
     </div>
   )

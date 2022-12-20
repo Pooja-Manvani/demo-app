@@ -1,1 +1,15 @@
 // Breadcrumb styles goes here
+
+.cart-Container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+  

@@ -28,8 +28,8 @@ export default function About() {
       {/* Accordion start */}
       <div className="container w-lg-50 m-3 ms-0 p-md-5 pe-lg-0 overflow-hidden align-self-center justify-content-lg-end ">
         <Accordion defaultActiveKey={0} >
-        {accodionData.map((data)=> (
-          <Accordion.Item eventKey={data.eventKey} >
+        {accodionData.map((data, index)=> (
+          <Accordion.Item eventKey={data.eventKey} key={index} >
             <AccordionHeader className="d-flex justify-content-between" >
               <p className="m-0 fs-5 fw-lighter">{ data.accordionTitle }</p>
             </AccordionHeader>

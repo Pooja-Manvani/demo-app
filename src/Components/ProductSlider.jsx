@@ -15,6 +15,7 @@ export default function ProductSlider() {
     const response = await getSliderData();
     setSliderData(response.data);
   };
+  
   return (
     <div className=' py-4 px-4 justify-content-center mx-md-5' >
       <Swiper
@@ -60,8 +61,8 @@ export default function ProductSlider() {
         }}
       >
         {sliderData.map((data) => (
-        <SwiperSlide className='w-10 '>
-          <ProductCard data={{imgSrc: data.image, price: data.price, title: data.title}}  />
+        <SwiperSlide className='w-10'>
+          <ProductCard  data={{imgSrc: data.image, price: data.price, title: data.title, id: data.id}}  />
         </SwiperSlide>
         ))}
 

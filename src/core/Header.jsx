@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../context/AuthContext";
 
 export default function Header(props) {
-console.log('====================================');
-console.log(props,'header props');
   const [showSearchBox, setSearchBox] = useState(false);
   const { user, logOut } = useUserAuth();
+  const navigate = useNavigate();
   const handleSignOut = async () => {
     try{
      await logOut();
@@ -32,7 +32,7 @@ console.log(props,'header props');
         <div className="menu-display  px-4 ">
           <div className="pe-5">
             <a
-              onClick={()=>window.location.reload()}
+              onClick={()=>navigate('home')}
               className="text-black text-decoration-underline-black cursor-pointer"
             >
               HOME
@@ -61,7 +61,8 @@ console.log(props,'header props');
             <label htmlFor="globalSearch">
               <span onClick={()=>setSearchBox(true)} className="text-black  icon-search cursor-pointer"></span>
             </label>
-            {user && <span href="bag" className="text-black ps-5 icon-bag cursor-pointer"></span>}
+            {/* Cart icon */}
+            {user && <span onClick={()=>navigate('cart')}  className="text-black ps-5 icon-bag cursor-pointer"></span>}
           </div>
          
 
@@ -71,7 +72,7 @@ console.log(props,'header props');
             <span></span>
             <span></span>
             <ul id="menu">
-              <a onClick={()=>window.location.reload()}>
+              <a onClick={()=>navigate('home')}>
                 <li>Home</li>
               </a>
               <a onClick={props.scrollDown}>
