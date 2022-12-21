@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import { AuthContextProvider } from "./context/AuthContext";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Cart from "./Components/Cart";
+import GlobalState from "./context/GlobalState";
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
     <div className="h-100 overflow-auto" onScroll={showHeader}>
       <BrowserRouter>
        <AuthContextProvider>
+        <GlobalState>
+
         <Header scrollClass={scrollClass} scrollDown={scrollDown} getOpenModal={getOpenModal}/>
         <Home  getRef={getRef} />
         {openModal && <Login closeModal={closeModal} openModal={openModal} />}
@@ -53,16 +56,17 @@ function App() {
           <Route path="/" element={<Navigate to="/home" />} />
 
           {/* 👇️ only match this when no other routes match */}
-          <Route
+          {/* <Route
             path="*"
             element={
               <div>
                 <h2>404 Page not found</h2>
               </div>
             }
-            />
+            /> */}
         </Routes>
         <Footer />
+        </GlobalState>
        </AuthContextProvider>
        </BrowserRouter>
     </div>

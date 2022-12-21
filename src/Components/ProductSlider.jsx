@@ -62,7 +62,7 @@ export default function ProductSlider() {
       >
         {sliderData.map((data) => (
         <SwiperSlide className='w-10'>
-          <ProductCard  data={{imgSrc: data.image, price: data.price, title: data.title, id: data.id}}  />
+          <ProductCard key={{id: data.id}} data={{imgSrc: data.image, price: data.price, title: data.title, id: data.id}}  />
         </SwiperSlide>
         ))}
 

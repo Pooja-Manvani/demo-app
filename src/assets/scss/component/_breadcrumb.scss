@@ -3,7 +3,7 @@
 .cart-Container{
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 700px;
     align-items: center;
     justify-content: center;
     margin: 1.5rem;
@@ -12,4 +12,30 @@
     border-radius: 8px;
 }
 
+.cart {
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+  
+  .cart p {
+    text-align: center;
+  }
+  
+  .cart ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cart li {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid #00179b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
   

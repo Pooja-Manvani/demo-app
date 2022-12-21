@@ -1,7 +1,7 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 
-import CartContext from "../context/CartContext";
-import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from "./reducers";
+import CartContext, { Products } from "./CartContext"
+import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from "../Reducers/Reducers";
 
 const GlobalState = props => {
   // const [cart, setCart] = useState([]);
@@ -10,6 +10,7 @@ const GlobalState = props => {
   const addProductToCart = product => {
     setTimeout(() => {
       // setCart(updatedCart);
+      console.log('ji');
       dispatch({ type: ADD_PRODUCT, product: product });
     }, 700);
   };
@@ -24,6 +25,7 @@ const GlobalState = props => {
   return (
     <CartContext.Provider
       value={{
+        products: Products,
         cart: cartState.cart,
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart
